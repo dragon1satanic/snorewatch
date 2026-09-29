@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SnoreWatch</string>
+
+    <!-- Status -->
+    <string name="status_idle">Idle — press Start to begin monitoring</string>
+    <string name="status_monitoring">Listening for snoring…</string>
+    <string name="status_alarm">Snoring detected — waking you up!</string>
+    <string name="status_stopped">Monitoring stopped</string>
+    <string name="status_waiting_permissions">Waiting for permissions…</string>
+
+    <!-- UI -->
+    <string name="button_start">Start monitoring</string>
+    <string name="button_stop">Stop monitoring</string>
+    <string name="button_stop_alarm">I\'m awake — stop alarm</string>
+    <string name="label_sensitivity">Sensitivity: %1$s</string>
+    <string name="sensitivity_low">Low</string>
+    <string name="sensitivity_medium">Medium</string>
+    <string name="sensitivity_high">High</string>
+    <string name="label_snores_to_trigger">Snores before alarm: %1$d</string>
+    <string name="label_snore_count">Snoring episodes tonight: %1$d</string>
+    <string name="label_live_probability">Snore probability: %1$d%%</string>
+    <string name="label_events">Recent detections</string>
+    <string name="error_mic_permission">Microphone permission is required to detect snoring.</string>
+    <string name="error_detection">Detection error: %1$s</string>
+
+    <!-- Notifications -->
+    <string name="channel_monitor_name">Snore monitoring</string>
+    <string name="channel_alarm_name">Snore alarm</string>
+    <string name="notification_title">SnoreWatch is active</string>
+    <string name="notification_listening">Listening for snoring</string>
+    <string name="alarm_title">Snoring detected!</string>
+    <string name="alarm_text">You are snoring — tap to silence the alarm.</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_stop_alarm">I\'m awake</string>
+</resources>

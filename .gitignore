@@ -1,0 +1,19 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+app/build/
+keystore.properties
+keystore/
+
+# Local build tooling / scratch files (not part of the project)
+cmdline-tools.zip
+gradle.zip
+*.log
+.shots/
