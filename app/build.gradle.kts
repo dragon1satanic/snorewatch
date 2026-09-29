@@ -11,6 +11,13 @@ val keystoreProperties = Properties().apply {
     if (file.exists()) file.inputStream().use { load(it) }
 }
 
+// A fresh clone has no keystore.properties, so release signing is simply unavailable
+// there. Derive that once and use it for both the config and the build type: creating
+// the signing config unconditionally would call rootProject.file("") and fail every
+// build (debug included) at configuration time.
+val releaseStoreFile = keystoreProperties.getProperty("storeFile")
+val hasReleaseSigning = !releaseStoreFile.isNullOrBlank()
+
 android {
     namespace = "com.snorewatch.app"
     compileSdk = 34
@@ -24,18 +31,20 @@ android {
     }
 
     signingConfigs {
-        create("release") {
-            storeFile = rootProject.file(keystoreProperties.getProperty("storeFile", ""))
-            storePassword = keystoreProperties.getProperty("storePassword")
-            keyAlias = keystoreProperties.getProperty("keyAlias")
-            keyPassword = keystoreProperties.getProperty("keyPassword")
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = rootProject.file(releaseStoreFile)
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
         }
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            if (keystoreProperties.getProperty("storePassword") != null) {
+            if (hasReleaseSigning) {
                 signingConfig = signingConfigs.getByName("release")
             }
         }

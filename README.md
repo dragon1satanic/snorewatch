@@ -72,8 +72,9 @@ Constants in `SnoreDetectionService.kt` you may want to tweak:
 
 `app/build.gradle.kts` reads release signing credentials from `keystore.properties`
 at the project root. That file — and the keystore it points at — are **not** in this
-repository (see `.gitignore`). If the file is absent the release build simply isn't
-signed, so a fresh clone can still build and run debug builds with no setup.
+repository (see `.gitignore`). When it is absent no release signing config is created
+at all, so a fresh clone builds and installs debug builds with no setup, and
+`assembleRelease` produces an unsigned APK.
 
 To sign a release build yourself, create `keystore.properties`:
 
