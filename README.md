@@ -11,11 +11,16 @@ leaves the phone.
 
 **[Download SnoreWatch →](https://auto-machines.com/apps/snorewatch/)**
 
-Android 8.0 or newer, ~32 MB, signed release build. If you'd rather skip the page, the
-APK itself is at
+Android 8.0 or newer, ~32 MB, free, signed release build. If you'd rather skip the page,
+the APK itself is at
 [`auto-machines.com/apps/snorewatch/snorewatch-android.apk`](https://auto-machines.com/apps/snorewatch/snorewatch-android.apk).
 
 Or build it yourself from this repo — see [Building](#building).
+
+Note that the source and the packaged build are licensed differently: the code in this
+repository is [MIT](#license), while the APK offered on the site is distributed under the
+site's [EULA](https://auto-machines.com/apps/snorewatch/eula.html), whose terms are more
+restrictive (personal, non-commercial use; no redistribution).
 
 ## How it works
 
