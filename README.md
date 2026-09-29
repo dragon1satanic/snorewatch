@@ -7,6 +7,16 @@ Detection runs **100% on-device** using Google's YAMNet audio classification mod
 (TensorFlow Lite) — no internet connection or account needed, and no audio ever
 leaves the phone.
 
+## Download
+
+**[Download SnoreWatch →](https://auto-machines.com/apps/snorewatch/)**
+
+Android 8.0 or newer, ~32 MB, signed release build. If you'd rather skip the page, the
+APK itself is at
+[`auto-machines.com/apps/snorewatch/snorewatch-android.apk`](https://auto-machines.com/apps/snorewatch/snorewatch-android.apk).
+
+Or build it yourself from this repo — see [Building](#building).
+
 ## How it works
 
 1. A foreground service records short (≈1 s) audio windows from the microphone.
@@ -74,7 +84,7 @@ Constants in `SnoreDetectionService.kt` you may want to tweak:
 at the project root. That file — and the keystore it points at — are **not** in this
 repository (see `.gitignore`). When it is absent no release signing config is created
 at all, so a fresh clone builds and installs debug builds with no setup, and
-`assembleRelease` produces an unsigned APK.
+`assembleRelease` produces `app-release-unsigned.apk`.
 
 To sign a release build yourself, create `keystore.properties`:
 
@@ -90,6 +100,18 @@ keyPassword=…
 Audio is processed in memory in real time and is **never recorded, stored, or
 transmitted**. The app declares no `INTERNET` permission, so it has no way to
 send audio anywhere even if it wanted to.
+
+## More from Autonomous Machines
+
+SnoreWatch is a small side project from **[auto-machines.com](https://auto-machines.com/)**.
+The main thing over there is **[Zerx](https://auto-machines.com/zerx.html)** — a desktop AI
+workspace for Windows and Linux that runs models locally on your own machine, is free, and
+shows you every edit before it lands. It scratches the same itch as this app: your hardware,
+your data, nothing shipped off to someone else's server.
+
+Also on the site: [release news](https://auto-machines.com/news.html), and a couple of small
+browser toys — [Bouncing Bubbles](https://auto-machines.com/bubbles.html) and
+[Bubble Fountain](https://auto-machines.com/fountain.html).
 
 ## License
 
